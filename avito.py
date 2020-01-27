@@ -15,7 +15,7 @@ class AvitoSearch(AdBoardSearch):
         self.query = query
 
     def check_new(self):
-        url = urljoin(self.base_url, f'rossiya?q={self.query}')  # searching on whole Russia
+        url = urljoin(self.base_url, f'rossiya?s=104&q={self.query}')  # searching on whole Russia
         resp = self.session.get(url).text
         return self._extract_ads(resp)
 
