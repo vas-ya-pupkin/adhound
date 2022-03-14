@@ -2,3 +2,4 @@ peewee==3.13.1
 win10toast==0.9
 requests
 beautifulsoup4
+lxml
