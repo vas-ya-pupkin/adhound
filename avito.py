@@ -22,9 +22,9 @@ class AvitoSearch(AdBoardSearch):
     def _extract_ads(self, html):
         res = []
         soup = BeautifulSoup(html, 'lxml')
-        ads = soup.find_all('div', {'class': 'item__line'})
+        ads = soup.find_all('div', {'data-marker': 'item'})
         for i in ads:
-            link = i.find('a', {'class': 'snippet-link'})
+            link = i.find('a', {'data-marker': 'item-title'})
             url = link.get('href')
             title = link.get('title').strip()
             res.append(
